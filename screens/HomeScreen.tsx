@@ -20,7 +20,7 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <Image style={styles.image} source={require('../img/cocktail.png')} />
       <Button block={true} style={styles.button} onPress={goToScreen}>
-          <Text>Navigate</Text>
+        <Text>Search your favorite cocktail</Text>
       </Button>
     </View>
   );
