@@ -9,12 +9,18 @@
  */
 
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Provider } from 'react-redux';
+import { configureStore } from './redux/store';
+import SearchScreen from './screens/SearchScreen';
 
+const store = configureStore();
 
 const App = () => {
   return (
-    <View><Text>Hola2</Text></View>
+    <Provider store={store}>
+      <SearchScreen/>
+    </Provider>
   );
 };
 
