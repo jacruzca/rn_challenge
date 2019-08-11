@@ -10,16 +10,22 @@
 
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import { NavigationContainerComponent } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { configureStore } from './redux/store';
-import SearchScreen from './screens/SearchScreen';
+import NavigationService from './screens/NavigationService';
+import Navigator from './screens/Navigator';
 
 const store = configureStore();
 
 const App = () => {
   return (
     <Provider store={store}>
-      <SearchScreen/>
+      <Navigator
+        ref={(navigatorRef: NavigationContainerComponent) => {
+          NavigationService.setTopLevelNavigator(navigatorRef);
+        }}
+      />
     </Provider>
   );
 };
